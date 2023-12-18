@@ -24,6 +24,7 @@ import {
   polygon,
   sepolia,
   zkSync,
+  ronin,
 } from "viem/chains";
 
 export const shibarium = defineChain({
@@ -143,6 +144,7 @@ export const inscriptionChains = {
   filecoin,
   shibarium,
   sepolia,
+  ronin,
 };
 
 export type ChainKey = keyof typeof inscriptionChains;
