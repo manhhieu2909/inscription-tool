@@ -8,23 +8,20 @@ import {
   classic,
   confluxESpace,
   coreDao,
-  cronos,
   eos,
   fantom,
   filecoin,
   gnosis,
-  klaytn,
   linea,
   mainnet,
-  mantle,
-  neonMainnet,
+  metis,
   okc,
   opBNB,
   optimism,
   polygon,
-  sepolia,
-  zkSync,
   ronin,
+  scroll,
+  zkSync,
 } from "viem/chains";
 
 export const shibarium = defineChain({
@@ -71,7 +68,30 @@ export const ethw = defineChain({
   },
 });
 
-export const kcc = defineChain({
+
+export const ace = defineChain({
+  id: 648,
+  name: "Endurance Smart Chain Mainnet",
+  network: "Endurance Smart Chain Mainnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "ACE",
+    symbol: "ACE",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc-endurance.fusionist.io"],
+    },
+    public: {
+      http: ["https://rpc-endurance.fusionist.io"],
+    },
+  },
+  blockExplorers: {
+    default: { name: "Explorer", url: "https://explorer.endurance.fusionist.io" },
+  },
+});
+
+export const kucoin = defineChain({
   id: 321,
   name: "KCC Mainnet",
   network: "KCC Mainnet",
@@ -82,10 +102,10 @@ export const kcc = defineChain({
   },
   rpcUrls: {
     default: {
-      http: ["https://kcc-rpc.com"],
+      http: ["https://rpc-mainnet.kcc.network"],
     },
     public: {
-      http: ["https://kcc-rpc.com"],
+      http: ["https://rpc-mainnet.kcc.network"],
     },
   },
   blockExplorers: {
@@ -114,37 +134,34 @@ export const mapo = defineChain({
     default: { name: "Explorer", url: "https://mapscan.io" },
   },
 });
-
 export const inscriptionChains = {
   eth: mainnet,
   bsc,
-  opBNB,
-  // okc,
   polygon,
-  fantom,
   avalanche,
-  arbitrum,
   optimism,
-  base,
-  zkSync,
   classic,
-  klaytn,
-  mantle,
-  mapo,
-  cronos,
-  kcc,
-  coreDao,
-  ethw,
-  eos,
-  neonMainnet,
+  base,
+  arbitrum,
+  zkSync,
+  filecoin,
   linea,
+  okc,
+  fantom,
+  opBNB,
   celo,
   confluxESpace,
   gnosis,
-  filecoin,
   shibarium,
-  sepolia,
+  eos,
+  ethw,
+  coreDao,
+  kucoin,
+  metis,
   ronin,
+  scroll,
+  ace,
+  mapo,
 };
 
 export type ChainKey = keyof typeof inscriptionChains;
